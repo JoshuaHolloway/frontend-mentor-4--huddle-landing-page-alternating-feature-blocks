@@ -1,0 +1,58 @@
+@use 'scrollbar';
+@use 'colors' as *;
+@use 'fonts';
+@use 'variables' as *;
+
+// Components:
+@use './comps/button';
+//
+// ==============================================
+
+// ==============================================
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+
+  // outline: solid yellow 1px;
+}
+
+// ==============================================
+
+body {
+  margin: 0;
+
+  #root {
+    .app {
+      // Gutters:
+      .gutters {
+        padding: 0 $gutter;
+        max-width: 2e3px;
+        margin: 0 auto;
+      }
+
+      section.hero {
+        background: $bg-hero;
+        min-height: 100vh;
+
+        @import './sections/section-1';
+      }
+
+      section.cards {
+        // background: darkorange;
+      }
+
+      section.banner {
+        background: lightgreen;
+
+        @import './sections/section-3';
+      }
+
+      section.footer {
+        background: darkorchid;
+      }
+    }
+  }
+}
+
+// ==============================================

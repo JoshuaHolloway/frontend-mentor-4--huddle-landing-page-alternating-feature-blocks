@@ -1,0 +1,28 @@
+@use '../shadow';
+@use '../breakpoints' as *;
+
+.button {
+  background: orange;
+  border-radius: 100vmax; // pill-hack
+
+  @media (max-width: #{$break}) {
+    padding: 10px;
+  }
+  @media (min-width: #{$break}) {
+    padding: 15px;
+  }
+
+  font-size: var(--fs-button);
+  font-weight: 600;
+
+  text-align: center;
+  border: none;
+
+  box-shadow: shadow.f(0);
+
+  transition: all 0.2s ease;
+  &:hover {
+    box-shadow: shadow.f-hover(0);
+    transform: scale(1.025);
+  }
+}
